@@ -10,14 +10,6 @@ body {
 Add some style blocks below this line to style the card.
 */
 
-h2 {
-    margin: 10px;
-}
-
-p {
-    margin: 10px;
-}
-
 section {
     border-style: solid;
     border-width: 1px;
@@ -26,8 +18,16 @@ section {
     width: 250px;
 }
 
+h2 {
+    margin: 10px;
+}
+
 img {
     width: 100%;
+}
+
+p {
+    margin: 10px;
 }
 
 button {
