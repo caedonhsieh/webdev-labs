@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8"><title>Top Restaurant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Restaurant</title>
+    <style>
+        .search-params {
+            display: flex;
+        }
+        .search-params p {
+            margin: 10px;
+        }
+        .card {
+            border: solid 1px darkgray;
+            border-radius: 5px;
+            width: 500px;
+        }
+        .card img {
+            width: 100%;
+        }
+        .card p {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     {% include 'includes/header.html' %}
@@ -15,12 +34,13 @@
             <p>Search location: {{city}}</p>
             <p>Search term: {{search_term or 'None Specified'}}</p>
         </div>
-        <div>
+        <div class="card">
             <h1> {{restaurant.get('name')}} </h1>
+            <img src="{{restaurant.get('image_url')}}">
+            <p>Address: {{restaurant.get('display_address')}}</p>
+            <p>Price: {{restaurant.get('price')}}</p>
+            <p>Rating: {{restaurant.get('rating')}}/5, {{restaurant.get('review_count')}} reviews</p>
         </div>
-        <p>Data: {{ restaurant }}</p>
-        <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
     </main>
 </body>
 </html>
