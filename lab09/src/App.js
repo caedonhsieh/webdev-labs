@@ -4,17 +4,41 @@ import Profile from './Profile.js';
 import Suggestions from './Suggestions.js';
 import Stories from './Stories.js';
 import Posts from './Posts.js';
+import { getHeaders } from './utils.js';
 
 class App extends React.Component {  
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {}
+        }
+    }
+
+    componentDidMount() {
+        this.getUser();
+    }
+
+    getUser() {
+        fetch('/api/profile', {
+            headers: getHeaders()
+        })
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                user: data
+            })
+        })
+    }
 
     render () {
         return (
             <div>
 
-            <NavBar />
+            <NavBar title="Photo App" username={this.state.user.username} />
 
             <aside>
-                <Profile />
+                <Profile user={this.state.user} />
                 <Suggestions />
             </aside>
 

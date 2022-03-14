@@ -104,9 +104,9 @@ main {
     flex-direction: column;
     align-items: center;
 }
-.stories > div .pic {
-    min-width: 50px;
-    min-height: 50px;
+.stories > div img {
+    width: 50px;
+    height: 50px;
     border: solid 3px #dbdbdb;
     border-radius: 27px;
 }
@@ -243,8 +243,8 @@ aside header > div {
 }
 
 aside header .pic {
-    min-width: 60px;
-    min-height: 60px;
+    width: 60px;
+    height: 60px;
     border-radius: 33px;
     border-width: 0px;
     margin-right: 20px;
